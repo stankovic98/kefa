@@ -1,2 +1,0 @@
-# Location Set-up
-On first entry to application, user will send his coordinates. With these coordinates we try to conclude in which parish should we put him, we will send them to front end and on confirmation we will return the articles from that parish and diocese.

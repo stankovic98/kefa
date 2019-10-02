@@ -31,7 +31,7 @@ func getEnv(key string) string {
 	}
 	switch key {
 	case "PORT":
-		env = ":1234"
+		env = ":5000"
 	}
 	return env
 }
