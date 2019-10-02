@@ -1,6 +1,15 @@
 version: "3"
 services:
-    "api":
+    "db":
+        build:
+            context: ./test/db
+        environment:
+            POSTGRES_PASSWORD: lozinka123
+        ports:
+            - "5432:5432"
+        expose:
+            - "5432"
+    "kefa":
         build: 
             context: .
             dockerfile: ./Dockerfile
@@ -8,3 +17,10 @@ services:
             PORT: ":5000"
         ports: 
             - "5000:5000"
+        depends_on:
+            - "db"
+    "test":
+        build:
+            context: ./test
+        depends_on:
+            - "kefa"
